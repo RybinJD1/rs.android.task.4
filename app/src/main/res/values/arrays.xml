@@ -1,0 +1,55 @@
+<resources>
+
+    <string-array name="management">
+        <item>Room</item>
+        <item>Cursor</item>
+    </string-array>
+
+    <string-array name="management_values">
+        <item>room</item>
+        <item>cursor</item>
+    </string-array>
+
+    <string-array name="category">
+        <item>SUVs</item>
+        <item>Trucks</item>
+        <item>Crossovers</item>
+        <item>Sedans</item>
+        <item>Coupes</item>
+        <item>Sports Cars</item>
+        <item>Luxury</item>
+        <item>Convertibles</item>
+        <item>Electric Vehicles</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="category_values">
+        <item>SUVs</item>
+        <item>Trucks</item>
+        <item>Crossovers</item>
+        <item>Sedans</item>
+        <item>Coupes</item>
+        <item>Sports Cars</item>
+        <item>Luxury</item>
+        <item>Convertibles</item>
+        <item>Electric Vehicles</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="sort">
+        <item>none</item>
+        <item>Name</item>
+        <item>Category</item>
+        <item>Price</item>
+        <item>KM</item>
+    </string-array>
+
+    <string-array name="sort_values">
+        <item>none</item>
+        <item>Name</item>
+        <item>Category</item>
+        <item>Price</item>
+        <item>KM</item>
+    </string-array>
+</resources>
+

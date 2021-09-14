@@ -1,0 +1,50 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Database management">
+
+        <ListPreference
+            android:defaultValue="room"
+            android:entries="@array/management"
+            android:entryValues="@array/management_values"
+            android:key="list_management"
+            app:title="@string/title_activity_settings"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Sorting">
+
+        <SwitchPreferenceCompat
+            android:id="@+id/sort"
+            app:key="sort"
+            app:title="Sort" />
+
+        <ListPreference
+            android:defaultValue="false"
+            android:dependency="sort"
+            android:entries="@array/sort"
+            android:entryValues="@array/sort_values"
+            android:key="list_sort"
+            android:title="Sorting parameter"
+            app:defaultValue="none"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Filtration">
+
+        <SwitchPreferenceCompat
+            android:id="@+id/filter"
+            app:key="filter"
+            app:title="Filter" />
+
+        <ListPreference
+            android:defaultValue="false"
+            android:dependency="filter"
+            android:key="category"
+            android:title="Category"
+            app:defaultValue="none"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

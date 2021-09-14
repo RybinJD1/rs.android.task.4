@@ -1,0 +1,130 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="toolbar_margin">10dp</dimen>
+    <dimen name="null_margin">0dp</dimen>
+
+    <dimen name="base_radius">4dp</dimen>
+    <dimen name="size_separate">1dp</dimen>
+
+    <dimen name="width_logo_tool_bar">100dp</dimen>
+    <dimen name="height_logo_tool_bar">45dp</dimen>
+
+    <dimen name="action_bar_title_text_size">16sp</dimen>
+    <dimen name="action_bar_title_lite_text_size">20sp</dimen>
+    <dimen name="new_request_confirm_title_text_size">12sp</dimen>
+    <dimen name="new_request_confirm_sub_title_text_size">10sp</dimen>
+    <dimen name="new_request_confirm_title_margin_top">5dp</dimen>
+    <dimen name="new_request_confirm_list_margin_top">20dp</dimen>
+    <dimen name="new_request_confirm_sub_title_margin_top">10dp</dimen>
+    <dimen name="new_request_confirm_items_content_margin_top">16dp</dimen>
+    <dimen name="new_request_confirm_button_margin_top">34dp</dimen>
+    <dimen name="new_request_confirm_button_text_size">13sp</dimen>
+
+    <dimen name="login_button_text_size">20sp</dimen>
+    <dimen name="login_edit_text_margin_left">@dimen/base_space_6x</dimen>
+    <dimen name="login_edit_text_margin_right">@dimen/base_space_6x</dimen>
+    <dimen name="login_input_area_margin_top">50dp</dimen>
+    <dimen name="login_button_margin_top">32dp</dimen>
+    <dimen name="login_forget_password_text_margin_bottom">35dp</dimen>
+    <dimen name="login_forget_password_text_size">12sp</dimen>
+    <dimen name="login_button_margin_bottom">126dp</dimen>
+    <dimen name="login_button_height">50dp</dimen>
+    <dimen name="login_button_width">266dp</dimen>
+    <dimen name="login_margin_between_input_fields">11dp</dimen>
+
+    <dimen name="navigation_title_text_size">20sp</dimen>
+    <dimen name="navigation_title_margin_top">32dp</dimen>
+    <dimen name="navigation_content_margin_top">28dp</dimen>
+    <dimen name="navigation_item_size">134dp</dimen>
+    <dimen name="navigation_item_text_size">14sp</dimen>
+    <dimen name="input_edit_text_size">18sp</dimen>
+
+    <dimen name="edit_add_photo_to_list_button_height">48dp</dimen>
+    <dimen name="edit_add_photo_button_text_margin_left">10dp</dimen>
+    <dimen name="edit_add_photo_button_margin_top">14dp</dimen>
+    <dimen name="edit_photo_list_item_margin_between">16dp</dimen>
+    <dimen name="edit_photo_list_item_image_size">40dp</dimen>
+    <dimen name="edit_photo_basket_list_item_image_size">24dp</dimen>
+    <dimen name="edit_photo_list_item_text_size">12sp</dimen>
+
+    <dimen name="add_photo_dialog_text_margin">32dp</dimen>
+    <dimen name="add_photo_dialog_text_size">16sp</dimen>
+    <dimen name="add_photo_dialog_item_padding">16dp</dimen>
+
+    <dimen name="overview_list_item_size">100dp</dimen>
+    <dimen name="overview_list_item_car_model_text_size">12sp</dimen>
+    <dimen name="overview_list_item_update_date_text_size">9sp</dimen>
+    <dimen name="overview_list_item_info_titles_text_size">10sp</dimen>
+    <dimen name="overview_list_item_status_text_size">11sp</dimen>
+    <dimen name="overview_list_item_image_size">50dp</dimen>
+    <dimen name="overview_list_item_image_margin_top">15dp</dimen>
+    <dimen name="overview_list_item_padding_height">10dp</dimen>
+    <dimen name="overview_list_item_padding_left">18dp</dimen>
+    <dimen name="overview_list_item_padding_right">8dp</dimen>
+    <dimen name="overview_list_item_status_text_margin_top">4dp</dimen>
+    <dimen name="overview_list_item_content_padding_top">26dp</dimen>
+    <dimen name="overview_list_item_date_info_text_width">68dp</dimen>
+    <dimen name="overview_list_item_type_nr_text_width">75dp</dimen>
+    <dimen name="overview_list_item_popup_text_size">12sp</dimen>
+    <dimen name="overview_list_item_popup_content_main_padding">16dp</dimen>
+    <dimen name="overview_list_item_popup_content_secondary_padding">8dp</dimen>
+    <dimen name="overview_list_item_popup_width">150dp</dimen>
+    
+    <dimen name="additional_info_list_item_height">46dp</dimen>
+    <dimen name="additional_info_list_item_text_size">12sp</dimen>
+    <dimen name="additional_info_list_item_padding_left">16dp</dimen>
+    <dimen name="additional_info_list_item_padding_right">20dp</dimen>
+    <dimen name="additional_info_list_item_value_text_width">100dp</dimen>
+    <dimen name="additional_info_list_item_margin_between_texts">8dp</dimen>
+
+    <dimen name="summary_viewpager_size">150dp</dimen>
+    <dimen name="summary_car_name_text_size">16sp</dimen>
+    <dimen name="summary_label_text_size">10sp</dimen>
+    <dimen name="summary_value_text_size">10sp</dimen>
+    <dimen name="summary_car_label_text_size">8sp</dimen>
+    <dimen name="summary_car_value_text_size">12sp</dimen>
+    <dimen name="summary_save_text_size">13sp</dimen>
+    <dimen name="summary_margit_width">17dp</dimen>
+    <dimen name="summary_margit_top">20dp</dimen>
+
+
+    <dimen name="repair_cost_dialog_value_text_size">18sp</dimen>
+    <dimen name="repair_cost_dialog_value_margin_left">24dp</dimen>
+    <dimen name="repair_cost_dialog_seekbar_margin_left">8dp</dimen>
+    <dimen name="size_viewpager_indicator">5dp</dimen>
+    <dimen name="size_tabview_indicator">20dp</dimen>
+
+    <!-- Text size -->
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+
+    <dimen name="size_big_vector_icon">48dp</dimen>
+
+    <dimen name="item_edit_draft_size">140dp</dimen>
+    <dimen name="item_image_edit_draft_size">120dp</dimen>
+    <dimen name="padding_circle_image_bg">4dp</dimen>
+
+    <dimen name="btn_text_size">13sp</dimen>
+
+    <dimen name="size_circle_image">40dp</dimen>
+
+    <dimen name="two_dp_space">2dp</dimen>
+    <dimen name="base_space">8dp</dimen>
+    <dimen name="base_space_2x">16dp</dimen>
+    <dimen name="base_space_3x">24dp</dimen>
+    <dimen name="base_space_4x">32dp</dimen>
+    <dimen name="base_space_5x">40dp</dimen>
+    <dimen name="base_space_6x">48dp</dimen>
+
+    <!-- NavigationCard -->
+    <dimen name="margin_NC_name">8dp</dimen>
+
+
+    <!-- ImageAddingView -->
+    <dimen name="size_image_icon">45dp</dimen>
+
+</resources>
