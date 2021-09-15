@@ -1,4 +1,4 @@
-package com.example.android.carmarket.ui.list.adapter
+package com.example.android.carmarket.view.list.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

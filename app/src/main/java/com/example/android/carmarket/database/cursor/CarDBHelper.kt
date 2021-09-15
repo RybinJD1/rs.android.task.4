@@ -40,9 +40,8 @@ class CarDBHelper(context: Context?) :
 
     fun getCar(id: Int): Car? {
         var car: Car? = null
-        val cursor =
-            readableDatabase.rawQuery("SELECT * FROM $DB_NAME WHERE id = '$id'", null)
-        try {
+        val cursor = readableDatabase.rawQuery("SELECT * FROM $DB_NAME WHERE id = '$id'", null)
+        cursor.use {
             if (cursor.moveToFirst()) {
                 do {
                     val brand = cursor.getString(cursor.getColumnIndexOrThrow(BRAND))
@@ -54,10 +53,6 @@ class CarDBHelper(context: Context?) :
                     car = Car(brand, info, category, km, price, _id)
                 } while (cursor.moveToNext())
             }
-        } catch (e: Exception) {
-            //TODO
-        } finally {
-            cursor.close()
         }
         return car
     }
@@ -65,7 +60,7 @@ class CarDBHelper(context: Context?) :
     fun getCarsList(filter: String?): List<Car> {
         val cars = mutableListOf<Car>()
         val cursor = getAllCars(filter)
-        try {
+        cursor.use {
             if (cursor.moveToFirst()) {
                 do {
                     val brand = cursor.getString(cursor.getColumnIndexOrThrow(BRAND))
@@ -77,10 +72,6 @@ class CarDBHelper(context: Context?) :
                     cars.add(Car(brand, info, category, km, price, id))
                 } while (cursor.moveToNext())
             }
-        } catch (e: Exception) {
-            //TODO
-        } finally {
-            cursor.close()
         }
         return cars
     }

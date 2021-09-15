@@ -1,4 +1,4 @@
-package com.example.android.carmarket.ui.add
+package com.example.android.carmarket.view.add
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

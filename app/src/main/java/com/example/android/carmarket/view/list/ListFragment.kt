@@ -1,4 +1,4 @@
-package com.example.android.carmarket.ui.list
+package com.example.android.carmarket.view.list
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -19,9 +19,9 @@ import com.example.android.carmarket.database.CarRepository
 import com.example.android.carmarket.database.ROOM
 import com.example.android.carmarket.databinding.ListFragmentBinding
 import com.example.android.carmarket.model.Car
-import com.example.android.carmarket.ui.list.adapter.ListAdapter
-import com.example.android.carmarket.ui.list.adapter.ListListener
-import com.example.android.carmarket.ui.list.adapter.SwipeCallback
+import com.example.android.carmarket.view.list.adapter.ListAdapter
+import com.example.android.carmarket.view.list.adapter.ListListener
+import com.example.android.carmarket.view.list.adapter.SwipeCallback
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.collect

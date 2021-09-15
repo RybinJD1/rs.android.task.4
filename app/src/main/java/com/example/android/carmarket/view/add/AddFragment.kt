@@ -1,13 +1,15 @@
-package com.example.android.carmarket.ui.add
+package com.example.android.carmarket.view.add
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.navigation.findNavController
 import com.example.android.carmarket.R
@@ -49,10 +51,10 @@ class AddFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         binding.apply {
             if (car != null) {
-                brandEdit.hint = car?.brand.toString()
-                infoEdit.hint = car?.info.toString()
-                kmEdit.hint = car?.km.toString()
-                priceEdit.hint = car?.price.toString()
+                brandEdit.setText(car?.brand.toString())
+                infoEdit.setText(car?.info.toString())
+                kmEdit.setText(car?.km.toString())
+                priceEdit.setText(car?.price.toString())
                 categorySpinner.setSelection(categories().indexOf(categories().find { it == car?.category }))
             }
 
@@ -74,21 +76,29 @@ class AddFragment : Fragment(), AdapterView.OnItemSelectedListener {
             }
 
             btnSave.setOnClickListener {
-                if (car == null) {
-                    viewModel?.addCar(
-                        Car(
-                            viewModel?.brand, viewModel?.info, viewModel?.category,
-                            viewModel?.km, viewModel?.price
-                        )
-                    )
-                } else {
+                if (validate() && car == null) {
+                    viewModel?.addCar(Car(viewModel?.brand, viewModel?.info, viewModel?.category,
+                            viewModel?.km, viewModel?.price))
+                    view?.findNavController()?.navigate(R.id.action_addFragment_to_listFragment)
+                } else if (validate()){
                     viewModel?.updateCar(car!!)
+                    view?.findNavController()?.navigate(R.id.action_addFragment_to_listFragment)
                 }
-
-                view?.findNavController()?.navigate(R.id.action_addFragment_to_listFragment)
             }
         }
         return binding.root
+    }
+
+    private fun validate(): Boolean {
+        binding.apply {
+            if (TextUtils.isEmpty(brandEdit.text.trim()) || TextUtils.isEmpty(infoEdit.text.trim())
+                || TextUtils.isEmpty(kmEdit.text.trim()) || TextUtils.isEmpty(priceEdit.text.trim())
+            ) {
+                Toast.makeText(context, R.string.warning, Toast.LENGTH_SHORT).show()
+                return false
+            }
+        }
+        return true
     }
 
     override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {

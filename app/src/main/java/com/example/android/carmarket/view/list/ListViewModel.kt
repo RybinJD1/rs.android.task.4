@@ -1,4 +1,4 @@
-package com.example.android.carmarket.ui.list
+package com.example.android.carmarket.view.list
 
 import androidx.lifecycle.*
 import com.example.android.carmarket.database.CarRepository
@@ -39,7 +39,7 @@ class ListViewModel(private val repository: CarRepository) : ViewModel() {
     }
 
     private fun getCarForDB(id: Int): Flow<Car?> {
-        return repository.getCarForDB(id)
+        return repository.getCar(id)
     }
 
     fun deleteCar(car: Car) = viewModelScope.launch {

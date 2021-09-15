@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.android.carmarket.ui.list.ListFragment"
+        android:name="com.example.android.carmarket.view.list.ListFragment"
         android:label="list_fragment"
         tools:layout="@layout/list_fragment" >
         <action
@@ -16,11 +16,11 @@
     </fragment>
     <activity
         android:id="@+id/settingsActivity"
-        android:name="com.example.android.carmarket.ui.settings.SettingsActivity"
+        android:name="com.example.android.carmarket.view.settings.SettingsActivity"
         android:label="SettingsActivity" />
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.example.android.carmarket.ui.add.AddFragment"
+        android:name="com.example.android.carmarket.view.add.AddFragment"
         android:label="add_fragment"
         tools:layout="@layout/add_fragment" >
         <action

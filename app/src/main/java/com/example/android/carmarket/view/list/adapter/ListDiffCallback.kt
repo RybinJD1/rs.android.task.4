@@ -1,4 +1,4 @@
-package com.example.android.carmarket.ui.list.adapter
+package com.example.android.carmarket.view.list.adapter
 
 import androidx.annotation.Nullable
 import androidx.recyclerview.widget.DiffUtil

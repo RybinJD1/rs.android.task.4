@@ -12,12 +12,12 @@
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="Sorting">
+    <PreferenceCategory app:title="@string/sorting">
 
         <SwitchPreferenceCompat
             android:id="@+id/sort"
             app:key="sort"
-            app:title="Sort" />
+            app:title="@string/sort" />
 
         <ListPreference
             android:defaultValue="false"
@@ -41,7 +41,7 @@
             android:defaultValue="false"
             android:dependency="filter"
             android:key="category"
-            android:title="Category"
+            android:title="@string/category"
             app:defaultValue="none"
             app:useSimpleSummaryProvider="true" />
 

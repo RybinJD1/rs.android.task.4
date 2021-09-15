@@ -1,11 +1,9 @@
 package com.example.android.carmarket.database.room
 
 import androidx.room.*
-import com.example.android.carmarket.database.CATEGORY
 import com.example.android.carmarket.database.DB_NAME
 import com.example.android.carmarket.model.Car
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.distinctUntilChanged
 
 @Dao
 interface CarDao {
@@ -17,14 +15,10 @@ interface CarDao {
     suspend fun update(car: Car)
 
     @Query("SELECT * FROM $DB_NAME WHERE id = :id ")
-    fun getCarForDB(id: Int): Flow<Car>
+    fun getCarById(id: Int): Flow<Car>
 
-    fun getDogDistinctUntilChanged(id: Int) =
-        getCarForDB(id).distinctUntilChanged()
-
-
-    @Query("SELECT * FROM $DB_NAME WHERE $CATEGORY = :category")
-    fun getFilter(category: String): Flow<List<Car>>
+    @Query("SELECT * FROM $DB_NAME WHERE category = :category")
+    fun filterByCategory(category: String): Flow<List<Car>>
 
     @Delete
     suspend fun delete(car: Car)
@@ -33,5 +27,5 @@ interface CarDao {
     suspend fun clear()
 
     @Query("SELECT * FROM $DB_NAME")
-    fun getAllElements(): Flow<List<Car>>
+    fun selectAll(): Flow<List<Car>>
 }

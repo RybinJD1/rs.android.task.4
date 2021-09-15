@@ -16,11 +16,9 @@ import kotlinx.coroutines.flow.map
 
 class CarRepository(
     private val carDao: CarDao,
-//    context: Context
     private val application: Application,
     private val dbHelper: CarDBHelper = CarDBHelper(application)
 ) {
-    //    private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
     private val preferences = PreferenceManager.getDefaultSharedPreferences(application)
     private val management = preferences.getString("list_management", ROOM).toString().trim()
     private val asSort = preferences.getBoolean("sort", false)
@@ -31,9 +29,9 @@ class CarRepository(
     fun allCars(): Flow<List<Car>> {
         return if (management == ROOM) {
             if (asFilter) {
-                carDao.getFilter(filter).map { sortListCars(it) }
+                carDao.filterByCategory(filter).map { sortListCars(it) }
             } else
-                carDao.getAllElements().map { sortListCars(it) }
+                carDao.selectAll().map { sortListCars(it) }
         } else {
             if (asFilter) {
                 flowOf(sortListCars(dbHelper.getCarsList(filter)))
@@ -57,29 +55,18 @@ class CarRepository(
         }
     }
 
-    //проверить почему getDogDistinctUntilChanged а не просто getCarForDB(id)
-    fun getCarForDB(id: Int): Flow<Car?> {
-//        return carDao.getDogDistinctUntilChanged(id)
-//        return carDao.getCarForDB(id)
-        return if (management == ROOM)
-            carDao.getDogDistinctUntilChanged(id)
+    fun getCar(id: Int): Flow<Car?> {
+        return if (management == ROOM) carDao.getCarById(id)
         else flowOf(dbHelper.getCar(id))
     }
 
     suspend fun deleteCar(car: Car) {
-        if (management == ROOM)
-            carDao.delete(car)
+        if (management == ROOM) carDao.delete(car)
         else {
             val db: SQLiteDatabase = application.applicationContext.openOrCreateDatabase(
                 DB_NAME, Context.MODE_PRIVATE, null
             )
-            try {
-                db.execSQL("DELETE FROM $DB_NAME WHERE $ID = '${car.id}'")
-            } catch (e: Exception) {
-                //TODO
-            } finally {
-                db.close()
-            }
+            db.use { db.execSQL("DELETE FROM $DB_NAME WHERE $ID = '${car.id}'") }
         }
     }
 
@@ -92,20 +79,10 @@ class CarRepository(
                 Context.MODE_PRIVATE,
                 null
             )
-            try {
+            db.use {
                 db.execSQL(
-                    "UPDATE $DB_NAME SET " +
-                            "$BRAND = '${car.brand}', " +
-                            "$INFO = '${car.info}', " +
-                            "$CATEGORY = '${car.category}', " +
-                            "$KM = '${car.km}', " +
-                            "$PRICE = '${car.price}', " +
-                            "WHERE $ID = '${car.id}'"
+                    "UPDATE $DB_NAME SET $BRAND = '${car.brand}', $INFO = '${car.info}', $CATEGORY = '${car.category}', $KM = '${car.km}', $PRICE = '${car.price}' WHERE $ID = '${car.id}'"
                 )
-            } catch (e: Exception) {
-                //TODO
-            } finally {
-                db.close()
             }
         }
     }
@@ -114,15 +91,17 @@ class CarRepository(
         return if (asSort) {
             when (sort) {
                 BRAND -> list.sortedBy { it.brand }
-                PRICE -> list.sortedBy { it.price }
                 CATEGORY -> list.sortedBy { it.category }
+                KM -> list.sortedBy { it.km }
+                PRICE -> list.sortedBy { it.price }
                 else -> list.sortedBy { it.id }
             }
         } else {
             when (sort) {
                 BRAND -> list.sortedBy { it.brand }
-                PRICE -> list.sortedBy { it.price }
                 CATEGORY -> list.sortedBy { it.category }
+                KM -> list.sortedBy { it.km }
+                PRICE -> list.sortedBy { it.price }
                 else -> list.sortedBy { it.id }
             }
         }

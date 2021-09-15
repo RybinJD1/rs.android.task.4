@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarMarket">
         <activity
-            android:name="com.example.android.carmarket.MainActivity"
+            android:name="com.example.android.carmarket.view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.android.carmarket.ui.settings.SettingsActivity"
+            android:name="com.example.android.carmarket.view.settings.SettingsActivity"
             android:exported="true"
             android:label="@string/title_activity_settings" />
     </application>

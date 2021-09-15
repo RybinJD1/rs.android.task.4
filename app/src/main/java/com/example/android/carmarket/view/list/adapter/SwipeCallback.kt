@@ -1,4 +1,4 @@
-package com.example.android.carmarket.ui.list.adapter
+package com.example.android.carmarket.view.list.adapter
 
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView

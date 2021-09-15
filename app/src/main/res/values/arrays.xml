@@ -38,7 +38,7 @@
 
     <string-array name="sort">
         <item>none</item>
-        <item>Name</item>
+        <item>Brand</item>
         <item>Category</item>
         <item>Price</item>
         <item>KM</item>
@@ -46,10 +46,10 @@
 
     <string-array name="sort_values">
         <item>none</item>
-        <item>Name</item>
-        <item>Category</item>
-        <item>Price</item>
-        <item>KM</item>
+        <item>brand</item>
+        <item>category</item>
+        <item>price</item>
+        <item>km</item>
     </string-array>
 </resources>
 

@@ -1,11 +1,11 @@
-package com.example.android.carmarket.ui.settings
+package com.example.android.carmarket.view.settings
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.ListPreference
 import androidx.preference.PreferenceFragmentCompat
-import com.example.android.carmarket.MainActivity
+import com.example.android.carmarket.view.MainActivity
 import com.example.android.carmarket.R
 import com.example.android.carmarket.categories
 

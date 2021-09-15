@@ -13,4 +13,7 @@
     <string name="information">Information</string>
     <string name="save">Save</string>
     <string name="distance">Distance</string>
+    <string name="warning">Please fill all required fields</string>
+    <string name="sorting">Sorting</string>
+    <string name="sort">Sort</string>
 </resources>
